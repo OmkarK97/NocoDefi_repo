@@ -9,7 +9,7 @@ const Sidebar = ({
     return (
         <div className="w-[40%] px-6 bg-gradient-to-b from-slate-950 to bg-gray-950 h-screen flex flex-col items-center justify-center">
             <h2 className="text-5xl text-white font-semibold mb-0 -mt-10">
-                Get Started <br /> <h2 className="ml-20 mt-2 ">With</h2>
+                Get Started <br /> <span className="ml-20 mt-2 ">With</span>
             </h2>
             <div className="my-10 flex flex-col gap-14 text-white">
                 <button
