@@ -108,11 +108,13 @@ const ERC20Token = () => {
 
   const { isLoading: isConfirmingNext, isSuccess: isConfirmedNext } =
     useWaitForTransactionReceipt({
+      confirmations: 2,
       hash: hashNext,
     });
 
   const { isLoading: isConfirmingSubmit, isSuccess: isConfirmedSubmit } =
     useWaitForTransactionReceipt({
+      confirmations: 2,
       hash: hashSubmit,
     });
 
@@ -132,7 +134,7 @@ const ERC20Token = () => {
   }, [hashSubmit, isConfirmedSubmit]);
 
   const parseVal = () => {
-    const num = ethers.utils.parseUnits(supply.toString(), decimal);
+    const num = ethers.utils.parseUnits(supply.toString(), 18);
     return num;
   };
 

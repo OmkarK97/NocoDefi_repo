@@ -38,6 +38,17 @@ const Botanix = {
   },
 }
 
+const Testing = {
+  id: 42161,
+  name: 'Testing',
+  iconUrl: 'https://chainlist.org/unknown-logo.png',
+  iconBackground: '#fff',
+  nativeCurrency: { name: 'Ether', symbol: 'Eth', decimals: 18 },
+  rpcUrls: {
+    default: { http: ['http://127.0..0.1:8545'] },
+  },
+}
+
 const config = getDefaultConfig({
   appName: 'RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
@@ -50,7 +61,8 @@ const config = getDefaultConfig({
     zora,
     sepolia,
     Mumbai,
-    Botanix
+    Botanix,
+    Testing
   ],
   ssr: true,
 });
