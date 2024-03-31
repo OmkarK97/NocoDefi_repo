@@ -36,11 +36,6 @@ const ERC20DB = () => {
     fetchTokenData();
   }, []);
 
-  // Toggle minting form visibility
-  // const toggleMintingForm = () => {
-  //   setShowMintingForm(!showMintingForm);
-  // };
-
   return (
     <div className="absolute top-0 left-0 m-4 bg-white p-4 rounded-md shadow-md">
       <h2 className="text-xl font-semibold mb-2">Stored Token Data:</h2>
