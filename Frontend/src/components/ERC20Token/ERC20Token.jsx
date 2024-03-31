@@ -21,6 +21,7 @@ const ERC20Token = () => {
     writeContract: writeContractNext,
     isPending: isPendingNext,
   } = useWriteContract();
+  
   const {
     data: hashSubmit,
     writeContract: writeContractSubmit,

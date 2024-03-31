@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ContractLogic from './ContractLogic';
 
 const IndexStrategy = () => {
   const [selectedToken, setSelectedToken] = useState('');
@@ -50,7 +51,7 @@ const IndexStrategy = () => {
           const pair = `${tokenAddress}-${selectedToken}`;
           fees = swapFees[pair] || 0;
         }
-        const newTokensData = [...tokensData, { tokenName: tokenNameMap[selectedToken], allocation: parseInt(allocation), swapFees: fees }];
+        const newTokensData = [...tokensData, { tokenName: selectedToken, allocation: parseInt(allocation), swapFees: fees }];
         setTokensData(newTokensData);
       }
       setTotalAllocation(totalAllocation + parseInt(allocation));
@@ -74,6 +75,11 @@ const IndexStrategy = () => {
       alert('Cannot set token address')
     }
   };
+
+  const tokenArr = tokensData.map((tokenName) => tokenName.tokenName)
+  console.log(tokenArr)
+  const AllocationArr = tokensData.map((allocation) => allocation.allocation)
+  const SwapFees = tokensData.map((fees) => fees.swapFees)
 
   const handleSubmitFinalTokens = () => {
     console.log('Final Tokens Data:', tokensData);
@@ -103,7 +109,9 @@ const IndexStrategy = () => {
                 <button className="add-btn tracking-wide text-xl  text-white font-bold py-2 px-4 mx-5 transition duration-500  " type="submit">Add Token</button>
                 <button className="add-btn tracking-wide text-xl  text-white font-bold py-2 px-4 mx-5 transition duration-500  " type="button" onClick={handleClearTokensData}>Clear Tokens</button>
                 {showSubmitButton && (
-                  <button className='text-white' type="button" onClick={handleSubmitFinalTokens}>Submit</button>
+                  <button className='text-white' type="button" onClick={handleSubmitFinalTokens}>
+                    <ContractLogic tokenAddress={tokenAddress} tokenArr={tokenArr} AllocationArr={AllocationArr} SwapFees={SwapFees} />
+                  </button>
                 )}
               </div>
             </div>

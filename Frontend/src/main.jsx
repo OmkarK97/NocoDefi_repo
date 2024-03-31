@@ -27,6 +27,17 @@ const Mumbai = {
   },
 }
 
+const Botanix = {
+  id: 3636,
+  name: 'Botanix',
+  iconUrl: 'https://chainlist.org/unknown-logo.png',
+  iconBackground: '#fff',
+  nativeCurrency: { name: 'Bitcoin', symbol: 'BTC', decimals: 18 },
+  rpcUrls: {
+    default: { http: ['https://node.botanixlabs.dev'] },
+  },
+}
+
 const config = getDefaultConfig({
   appName: 'RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
@@ -38,7 +49,8 @@ const config = getDefaultConfig({
     base,
     zora,
     sepolia,
-    Mumbai
+    Mumbai,
+    Botanix
   ],
   ssr: true,
 });
