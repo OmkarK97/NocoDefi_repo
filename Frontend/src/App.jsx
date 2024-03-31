@@ -126,7 +126,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import ERC20TokenWrapper from './components/ERC20Token/ERC20TokenWrapper';
 import MainContent from './components/MainContent';
-import Main from './components/IndexStrat/Main';
+import IndexStrategy from './components/IndexStrat/IndexStrategy';
 
 const App = () => {
   const [showERC20Token, setShowERC20Token] = useState(false);
@@ -145,7 +145,7 @@ const App = () => {
         {(showERC20Token) ? (
           <ERC20TokenWrapper />
         ) : (showIndexStrategy) ? (
-          <Main />
+          <IndexStrategy/>
         ) :
           <MainContent />}
       </div>

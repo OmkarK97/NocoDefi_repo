@@ -13,16 +13,22 @@ const Sidebar = ({
             </h2>
             <div className="my-10 flex flex-col gap-14 text-white">
                 <button
-                    onClick={() => setShowERC20Token(!showERC20Token)}
+                    onClick={() => {
+                        setShowERC20Token(!showERC20Token)
+                        setShowIndexStrategy(false);
+                    }}
                     className="btn text-2xl font-medium tracking-wider"
                 >
-                    {showERC20Token ? 'Hide ERC20 TOKEN' : 'Show ERC20 TOKEN'}
+                    ERC20 TOKEN
                 </button>
                 <button
-                    onClick={() => setShowIndexStrategy(!showIndexStrategy)}
+                    onClick={() => {
+                        setShowIndexStrategy(!showIndexStrategy)
+                        setShowERC20Token(false)
+                    }}
                     className="btn text-2xl font-medium tracking-wider"
                 >
-                    {showIndexStrategy ? 'Hide Index Strategy' : 'Show Index Strategy'}
+                    Index Strategy
                 </button>
                 <button className="btn text-2xl font-medium tracking-wider">
                     DAPP
