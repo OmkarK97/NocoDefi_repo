@@ -49,6 +49,20 @@
   overflow: hidden;
   z-index: 1;
 }
+.add-btn {
+  border: 1.5px solid #ffffff;
+  letter-spacing: 1.5px;
+  color: white;
+  background: none;
+  padding: 4px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
 
 .btn:hover {
   color: black;
@@ -70,6 +84,9 @@
 }
 
 .submit-btn:hover {
+  color: black;
+}
+.add-btn:hover {
   color: black;
 }
 
@@ -98,6 +115,16 @@
   transition: 0.5s;
   z-index: -1;
 }
+.add-btn::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 0;
+  background: #fff8f8;
+  transition: 0.5s;
+  z-index: -1;
+}
 
 .btn::before {
   left: 0;
@@ -106,6 +133,9 @@
 
 .submit-btn::before {
   right: 0;
+  top: 0;
+}
+.add-btn::before {
   top: 0;
 }
 
@@ -130,6 +160,9 @@
 
 .submit-btn:hover::before {
   width: 180%;
+}
+.add-btn:hover::before {
+  height: 180%;
 }
 
 .add-btn:hover::before {
@@ -297,4 +330,12 @@
     #01dbc2 10%,
     transparent 50%
   );
+}
+
+.select {
+  background-color: rgb(55 65 81);
+  opacity: 20;
+  color: #fff;
+  letter-spacing: 1.5px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
