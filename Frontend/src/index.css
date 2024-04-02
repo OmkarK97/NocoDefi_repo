@@ -302,6 +302,15 @@
   color: #fff;
   letter-spacing: 1.5px;
 }
+.input-box input:valid ~ span,
+.input-box input:focus ~ span {
+  transform: translateX(5px) translateY(-30px);
+  font-size: 15px;
+  background: #111827;
+  opacity: 20;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
 
 .input-box2 input:valid ~ span,
 .input-box2 input:focus ~ span {

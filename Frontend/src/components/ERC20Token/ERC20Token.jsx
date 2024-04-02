@@ -107,11 +107,13 @@ const ERC20Token = () => {
 
   const { isLoading: isConfirmingNext, isSuccess: isConfirmedNext } =
     useWaitForTransactionReceipt({
+      confirmations: 2,
       hash: hashNext,
     });
 
   const { isLoading: isConfirmingSubmit, isSuccess: isConfirmedSubmit } =
     useWaitForTransactionReceipt({
+      confirmations: 2,
       hash: hashSubmit,
     });
 

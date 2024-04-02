@@ -1,4 +1,5 @@
 import React from "react";
+import SmallLoader from "../SmallLoader";
 
 const TokenForm = ({
   handleSubmit,
@@ -12,7 +13,7 @@ const TokenForm = ({
   isConfirmingSubmit,
 }) => {
   return (
-    <div className="outer-div flex justify-center items-center w-[500px] h-[410px]">
+    <div className=" outer-div flex justify-center items-center w-[500px] h-[410px]">
       <form
         className="flex flex-col justify-between gap-6 bg-gray-900 p-8 shadow-md w-[490px] h-[400px] "
         onSubmit={handleSubmit}
@@ -52,16 +53,23 @@ const TokenForm = ({
           </div>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col relative">
           <button
             disabled={isPendingSubmit}
-            className="submit-btn tracking-wide text-xl  text-white font-bold py-2 px-4 transition duration-500  "
+            className="submit-btn tracking-wide text-xl mb-8  text-white font-bold py-2 px-4 transition duration-500  "
             type="submit"
           >
             {isPendingSubmit ? "Confirming" : "Submit"}
           </button>
+          {isConfirmingSubmit && (
+            <>
+              <SmallLoader />
+              <div className="flex items-center justify-center absolute top-[78%] left-[25%] font-semibold z-40  text-white tracking-wider text-lg ">
+                Waiting for confirmation...
+              </div>
+            </>
+          )}
         </div>
-        {isConfirmingSubmit && <div>Waiting for confirmation...</div>}
       </form>
     </div>
   );
