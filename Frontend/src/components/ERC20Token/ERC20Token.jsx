@@ -21,6 +21,7 @@ const ERC20Token = () => {
     writeContract: writeContractNext,
     isPending: isPendingNext,
   } = useWriteContract();
+  
   const {
     data: hashSubmit,
     writeContract: writeContractSubmit,
@@ -133,7 +134,7 @@ const ERC20Token = () => {
   }, [hashSubmit, isConfirmedSubmit]);
 
   const parseVal = () => {
-    const num = ethers.utils.parseUnits(supply.toString(), decimal);
+    const num = ethers.utils.parseUnits(supply.toString(), 18);
     return num;
   };
 

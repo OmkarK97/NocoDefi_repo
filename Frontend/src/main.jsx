@@ -27,6 +27,28 @@ const Mumbai = {
   },
 }
 
+const Botanix = {
+  id: 3636,
+  name: 'Botanix',
+  iconUrl: 'https://chainlist.org/unknown-logo.png',
+  iconBackground: '#fff',
+  nativeCurrency: { name: 'Bitcoin', symbol: 'BTC', decimals: 18 },
+  rpcUrls: {
+    default: { http: ['https://node.botanixlabs.dev'] },
+  },
+}
+
+const Testing = {
+  id: 42161,
+  name: 'Testing',
+  iconUrl: 'https://chainlist.org/unknown-logo.png',
+  iconBackground: '#fff',
+  nativeCurrency: { name: 'Ether', symbol: 'Eth', decimals: 18 },
+  rpcUrls: {
+    default: { http: ['http://127.0..0.1:8545'] },
+  },
+}
+
 const config = getDefaultConfig({
   appName: 'RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
@@ -38,7 +60,9 @@ const config = getDefaultConfig({
     base,
     zora,
     sepolia,
-    Mumbai
+    Mumbai,
+    Botanix,
+    Testing
   ],
   ssr: true,
 });
